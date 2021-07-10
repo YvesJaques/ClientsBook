@@ -20,5 +20,7 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.post('/clients', 'ClientsController.create')
-Route.get('/clients', 'ClientsController.list')
+Route.group(() => {
+  Route.post('/clients', 'ClientsController.create')
+  Route.get('/clients', 'ClientsController.list')
+}).prefix('/api')
